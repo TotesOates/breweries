@@ -1,27 +1,27 @@
 <div class="rr-container">
-<div class="rr-page-header">
-  <LinkTo @route="index" class="rr-header-link">
-<h1 class="rr-app-title">Rock & Roll<small class="rr-subtitle">
-with Ember.js</small></h1>
-</LinkTo>
-</div>
+  <div class="rr-page-header">
+    <LinkTo @route="index" class="rr-header-link">
+      <h1 class="rr-app-title">Breweries in Austin</h1>
+    </LinkTo>
+  </div>
+
 <div class="rr-main-content">
-  <nav class="rr-navbar" role="navigation">
-<ul class="rr-nav">
-<li class="rr-navbar-item">
-<LinkTo @route="breweries">
-Breweries
-</LinkTo>
-</li>
-<li class="rr-navbar-item">
-<LinkTo @route="beers">
-Beers
-</LinkTo>
-</li>
-</ul>
-</nav>
-{{outlet}}
-</div>
+    <nav class="rr-navbar" role="navigation">
+      <ul class="rr-nav">
+        <li class="rr-navbar-item">
+          <LinkTo @route="breweries">
+            Breweries
+          </LinkTo>
+        </li>
+        <li class="rr-navbar-item">
+          <LinkTo @route="beers">
+            Beers
+          </LinkTo>
+        </li>
+      </ul>
+    </nav>
+  {{outlet}}
+  </div>
 </div>
 
 {{!-- <h1>Testing</h1>
