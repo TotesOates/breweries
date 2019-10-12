@@ -1,8 +1,16 @@
-{{outlet}}
-
-<div>hi</div>
-
-<section class="container mx-auto mt-4">
-  <h1 class="text-2xl text-red-500">Example title using Tailwind</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-</section>
+<div class="mx-auto w-full">
+  <div class="pb-1 border-b mx-2">
+    <h1 class="rr-app-title">Breweries in Austin</h1>
+    {{!-- TODO remove this --}}
+    </div>
+    <div class="rr-main-content">
+    <ul class="list pa0 ma0">
+    {{#each this.model as |song|}}
+    <li>
+    {{song.title}} by <em>{{song.band}}</em>
+    <span class="rating fr">{{song.rating}}</span>
+    </li>
+    {{/each}}
+    </ul>
+  </div>
+</div>
