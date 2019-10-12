@@ -10,8 +10,6 @@ Router.map(function() {
   this.route('breweries', function() {
     this.route('brewery', { path: ':id'}, function() {
       this.route('beers');
-      // add types?
-      this.route('types');
       this.route('details');
     });
   });
