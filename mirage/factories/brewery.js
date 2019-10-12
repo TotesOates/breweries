@@ -1,9 +1,10 @@
-import { Factory } from 'ember-cli-mirage';
+import { Factory, hasMany } from 'ember-cli-mirage';
 import faker from 'faker';
 
 export default Factory.extend({
-  name(i) {
-    return `Movie ${i}`;
+  beer: hasMany(),
+  name() {
+    return `${faker.company.companyName()} brewery`;
   },
 
   location(){
@@ -13,5 +14,4 @@ export default Factory.extend({
   description(){
     return faker.lorem.paragraph();
   }
-
 });

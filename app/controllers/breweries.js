@@ -14,7 +14,17 @@ export default Controller.extend({
   cancelAddBrewery: action(function() {
     this.set('isAddingBrewery', false);
   }),
+
   saveBrewery: action(function() {
-    // todo
+    let newBrewery = this.store.createRecord('brewery', {
+      name: this.newBreweryName });
+      
+    newBrewery.save();
+
+    this.setProperties({
+      newBreweryName: '',
+      isAddingBrewery: false,
+    });
+    this.router.transitionTo('breweries.brewery.beers', newBrewery.id);
   }),
 });

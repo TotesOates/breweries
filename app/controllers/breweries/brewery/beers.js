@@ -1,26 +1,31 @@
 import Controller from '@ember/controller';
-import Song from 'rarwe/models/song';
 import { action } from '@ember/object';
 import { empty } from '@ember/object/computed';
 
 export default Controller.extend({
-isAddingSong: false,
-newSongTitle: "",
-isAddButtonDisabled: empty('newSongTitle'),
-addSong: action(function() {
-this.set('isAddingSong', true);
-}),
-cancelAddSong: action(function() {
-this.set('isAddingSong', false);
-}),
-saveSong: action(function(event) {
-event.preventDefault();
-let newSong = Song.create({ title: this.newSongTitle });
-this.model.songs.pushObject(newSong);
-this.set('newSongTitle', '');
-}),
-
-updateRating: action(function(song, rating) {
-  song.set('rating', song.rating === rating ? 0 : rating);
+  isAddingBeer: false,
+  newBeerName: "",
+  isAddButtonDisabled: empty('newBeerName'),
+  
+  addBeer: action(function() {
+  this.set('isAddingBeer', true);
   }),
+  
+  cancelAddBeer: action(function() {
+  this.set('isAddingBeer', false);
+  }),
+  
+  saveBeer: action(function(event) {
+    event.preventDefault();
+    let newBeer = this.store.createRecord('beer', {
+      title: this.newBeerName,
+      brewery: this.model
+    });
+    newBeer.save();
+  }),
+
+  updateRating: action(function(beer, rating) {
+    beer.set('rating', beer.rating === rating ? 0 : rating);
+    beer.save();
+    }),
 });

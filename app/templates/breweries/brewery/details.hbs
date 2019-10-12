@@ -1,5 +1,9 @@
 <section class="rr-panel b--solid br1 bw1">
-  <button type="button" class="rr-action-button fr" {{on "click" this.toggleIsEditing}}>
+  <button 
+    type="button" 
+    class="rr-action-button fr" 
+    {{on "click" (if this.isEditing this.save this.toggleIsEditing)}}
+  >
     {{if this.isEditing "Save" "Edit"}}
   </button>
   

@@ -1,9 +1,12 @@
-import { Factory } from 'ember-cli-mirage';
+import { Factory, belongsTo } from 'ember-cli-mirage';
 import faker from 'faker';
+
 export default Factory.extend({
-  // name
-  // type
-  // alcohol percentage
+  beer: belongsTo(),
+
+  afterCreate(post, server) {
+
+  },
 
   name(){
     return faker.name.firstName();

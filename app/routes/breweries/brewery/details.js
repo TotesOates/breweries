@@ -10,21 +10,23 @@ export default Route.extend({
   init() {
     this._super();
     this.router.on('routeWillChange', (transition) => {
-    if (!transition.from) {
-    return;
-    }
-    if (transition.to.name === transition.from.name) {
-    return;
-    }
+      if (!transition.from) {
+        return;
+      }
+      if (transition.to.name === transition.from.name) {
+        return;
+      }
     let controller = this.controller;
+    
     if (controller && controller.isEditing) {
-    let leave = window.confirm('Are you sure?');
-    if (!leave) {
-    transition.abort();
-    } else {
-    controller.set('isEditing', false);
-    }
+      let leave = window.confirm('Are you sure?');
+    
+      if (!leave) {
+        transition.abort();
+      } else {
+        controller.set('isEditing', false);
+      }
     }
     });
-    }
+  }
 });
