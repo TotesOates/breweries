@@ -12,6 +12,7 @@ Router.map(function() {
       this.route('beers');
       // add types?
       this.route('types');
+      this.route('details');
     });
   });
 

@@ -1,44 +1,39 @@
-<div class="float-left width-1/3">
-  <ul class="list-none">
-    {{#each this.model as |band|}}
-  <li class="mb-3">
-  <LinkTo @route="breweries.brewery" @model={{brewery.id}} class="ml-3 active:inline-block">
-    {{band.name}}
-    <span class="rr-pointer">
-      {{fa-icon "angle-right"}}
-    </span>
-  </LinkTo>
-  </li>
-    {{/each}}
-  </ul>
-  <div class="rr-new-label">
+<div class="rr-sidebar">
+<ul class="list pl3">
+{{#each this.model as |brewery|}}
+<li>{{brewery.title}}</li>
+{{/each}}
+</ul>
+<div class="rr-new-label">
 {{#if this.isAddingBrewery}}
+<form class="rr-inline-form" {{on "submit" this.saveBrewery}}>
 <Input
 @type="text"
-@value={{this.newBandName}}
+@value={{this.newBreweryName}}
 class="rr-input"
-placeholder="New band"
+placeholder="New brewery"
 data-test-rr="new-band-input"
 />
 <button
-type="button"
+type="submit"
 class="rr-action-button"
-{{on "click" this.saveBand}}>
+disabled={{this.isAddButtonDisabled}}>
 Add
 </button>
 <button
 class="rr-cancel-icon"
-{{on "click" this.cancelAddBand}}>
+{{on "click" this.cancelAddBrewery}}>
 {{fa-icon "times"}}
 </button>
+</form>
 {{else}}
 <label {{on "click" this.addBrewery}}>
 {{fa-icon "plus"}}
-<span class="ml1">Add new band</span>
+<span class="ml1">Add new brewery</span>
 </label>
 {{/if}}
 </div>
-  </div>
-  <div class="rr-main-panel">
-  {{outlet}}
+</div>
+<div class="rr-main-panel">
+{{outlet}}
 </div>

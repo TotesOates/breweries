@@ -1,25 +1,30 @@
-<div class="mx-auto w-full">
-  <div class="pb-1 border-b mx-2">
-    <h1 class="rr-app-title">Breweries in Austin</h1>
-  </div>
-
-  <div class="rr-main-content">
-    <nav class="relative b-2 solid" role="navigation">
-      <ul class="flex m-0 p-0">
-        <li class="p-2 hover:bg-gray-200 hover:text-black">
-          <LinkTo @route="breweries"> Breweries </LinkTo>
-        </li>
-        <li class="p-2 hover:bg-gray-200 hover:text-black">
-          <LinkTo @route="beers"> Beers </LinkTo>
-        </li>
-      </ul>
-    </nav>
-    {{outlet}}
-  </div>
+<div class="rr-container">
+<div class="rr-page-header">
+  <LinkTo @route="index" class="rr-header-link">
+<h1 class="rr-app-title">Rock & Roll<small class="rr-subtitle">
+with Ember.js</small></h1>
+</LinkTo>
+</div>
+<div class="rr-main-content">
+  <nav class="rr-navbar" role="navigation">
+<ul class="rr-nav">
+<li class="rr-navbar-item">
+<LinkTo @route="breweries">
+Breweries
+</LinkTo>
+</li>
+<li class="rr-navbar-item">
+<LinkTo @route="beers">
+Beers
+</LinkTo>
+</li>
+</ul>
+</nav>
+{{outlet}}
+</div>
 </div>
 
-
-<h1>Testing</h1>
+{{!-- <h1>Testing</h1>
 
 <ul>
   {{#each this.model.breweries as |brewery|}}
@@ -33,4 +38,4 @@
   {{#each this.model.beers as |beer|}}
     <li>{{beer.name}} by {{beer.type}}</li>
   {{/each}}
-</ul>
+</ul> --}}

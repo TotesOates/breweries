@@ -5,9 +5,9 @@ export default Model.extend({
   // name
   // location
 
-  name: attr(),
-  description: attr(),
-  location: attr(),
+  name: attr('string'),
+  description: attr('string'),
+  location: attr('string'),
   beers: hasMany(),
 
 });
