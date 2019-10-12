@@ -11,7 +11,7 @@ export default Controller.extend({
 
   cancelAddBrewery: action(function() {
     this.set('isAddingBrewery', false);
-  },
+  }),
   saveBrewery: action(function() {
     // todo
   }),

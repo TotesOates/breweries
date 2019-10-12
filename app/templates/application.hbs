@@ -17,3 +17,20 @@
     {{outlet}}
   </div>
 </div>
+
+
+<h1>Testing</h1>
+
+<ul>
+  {{#each this.model.breweries as |brewery|}}
+    <li>{{brewery.name}} {{brewery.location}}</li>
+  {{/each}}
+</ul>
+
+<h1>beer</h1>
+
+<ul>
+  {{#each this.model.beers as |beer|}}
+    <li>{{beer.name}} by {{beer.type}}</li>
+  {{/each}}
+</ul>

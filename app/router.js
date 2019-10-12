@@ -8,7 +8,7 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('breweries', function() {
-    this.route('brewery', { path: ':slug '}, function() {
+    this.route('brewery', { path: ':id'}, function() {
       this.route('beers');
       // add types?
       this.route('types');

@@ -2,7 +2,7 @@
   <ul class="list-none">
     {{#each this.model as |band|}}
   <li class="mb-3">
-  <LinkTo @route="bands.band.songs" @model={{band.slug}} class="ml-3 active:inline-block">
+  <LinkTo @route="breweries.brewery" @model={{brewery.id}} class="ml-3 active:inline-block">
     {{band.name}}
     <span class="rr-pointer">
       {{fa-icon "angle-right"}}
