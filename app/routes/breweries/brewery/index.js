@@ -3,9 +3,6 @@ import { inject as service } from '@ember/service';
 
 export default Route.extend({
   router: service(),
-  // model(params) {
-  //   return this.store.findAll('brewery', params.id);
-  // },
 
   // redirect(brewery) {
   //   if (brewery.description) {

@@ -26,6 +26,8 @@ export default function() {
 
   this.get('/breweries');
   this.get('/breweries/:id');
+  this.get('/breweries/:id/details')
+  this.get('/breweries/:id/beers')
   this.post('/breweries');
   this.get('/beers');
   this.post('/beers')
