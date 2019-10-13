@@ -13,8 +13,8 @@ export default function(server) {
   //   description: 'Sci-Fi'
   // });
 
-  server.createList('brewery', 5)
-  server.createList('beer', 5)
+  // server.createList('brewery', 5)
+  // server.createList('beer', 5)
 
   let brewery = server.create('brewery', {name: 'testing brewery '});
   server.create('beer', {
@@ -24,7 +24,23 @@ export default function(server) {
     brewery: brewery
   });
 
-  server.createList('brewery', 5).forEach(brewery => {
-    server.createList('beer', 10, { brewery })
+  let brewery2 = server.create('brewery', {name: 'testing brewery2 '});
+  server.create('beer', {
+    name: 'random beer2',
+    type: 'IPA',
+    alcoholPercentage: 123,
+    brewery: brewery2
   });
+
+  let brewery3 = server.create('brewery', {name: 'testing brewery3 '});
+  server.create('beer', {
+    name: 'random beer3',
+    type: 'IPA',
+    alcoholPercentage: 123,
+    brewery: brewery3
+  });
+
+  // server.createList('brewery', 5).forEach(brewery => {
+  //   server.createList('beer', 5, { brewery })
+  // });
 }

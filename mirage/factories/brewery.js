@@ -3,6 +3,7 @@ import faker from 'faker';
 
 export default Factory.extend({
   beer: hasMany(),
+  
   name() {
     return `${faker.company.companyName()} brewery`;
   },

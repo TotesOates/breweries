@@ -1,13 +1,15 @@
 <nav class="rr-navbar" role="navigation">
   <ul class="rr-nav">
     <li class="rr-navbar-item">
-      <LinkTo @route="breweries.brewery.details" @model={{brewery.id}}>Details</LinkTo>
+      <LinkTo @route="breweries.brewery.details" @model={{brewery}}>Details</LinkTo>
     </li>
     <li class="rr-navbar-item">
-      <LinkTo @route="breweries.brewery.beers" @model={{brewery.id}}>Beers</LinkTo>
+      <LinkTo @route="breweries.brewery.beers" @model={{brewery}}>Beers</LinkTo>
     </li>
   </ul>
 </nav>
 {{outlet}}
+{{log model}}
 
 {{!-- {{debugger}} --}}
+{{!-- {{log brewery}} --}}
